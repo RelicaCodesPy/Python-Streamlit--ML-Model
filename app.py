@@ -155,6 +155,5 @@ webrtc_streamer(
     },
     media_stream_constraints={"video": True, "audio": False},
 )
-)
 
 st.markdown('<div class="footer">⚡ Powered by YOLOv8 | Streamlit | OpenCV</div>', unsafe_allow_html=True)
