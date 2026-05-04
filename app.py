@@ -5,6 +5,8 @@ import av
 import cv2
 import numpy as np
 import time
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 # =========================
 # 🎨 TECH UI THEME
