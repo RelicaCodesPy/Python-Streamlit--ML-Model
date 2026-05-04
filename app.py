@@ -148,9 +148,13 @@ webrtc_streamer(
     video_frame_callback=video_frame_callback,
     async_processing=True,
     rtc_configuration={
-        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+        "iceServers": [
+            {"urls": "stun:stun.l.google.com:19302"},
+            {"urls": "stun:global.stun.twilio.com:3478"}
+        ]
     },
     media_stream_constraints={"video": True, "audio": False},
+)
 )
 
 st.markdown('<div class="footer">⚡ Powered by YOLOv8 | Streamlit | OpenCV</div>', unsafe_allow_html=True)
