@@ -1,4 +1,4 @@
-# 🎯 Real-Time AI Object Detection & Tracking System
+# 🎯 Live Object detection and Tracing
 
 A powerful **real-time computer vision web app** built with **Streamlit + YOLOv8 + WebRTC**, capable of detecting and tracking **80+ objects live from a webcam feed** with alerts, counting, and evidence saving.
 
