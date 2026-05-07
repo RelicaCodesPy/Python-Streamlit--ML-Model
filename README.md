@@ -1,238 +1,134 @@
-🎯 Live Object Detection & Tracking System
-Streamlit App
-YOLOv8
-Python
-License
+# 🎯 Real-Time AI Object Detection & Tracking System
 
-Real-time AI-powered object detection with 80+ object classes, live tracking, threat alerts, and forensic evidence capture! 🚨📸
+A powerful **real-time computer vision web app** built with **Streamlit + YOLOv8 + WebRTC**, capable of detecting and tracking **80+ objects live from a webcam feed** with alerts, counting, and evidence saving.
 
-✨ Features
-🎥 **Live Camera Feed
+---
 
-🎯 **80+ Objects
+## 🚀 Features
 
-🚨 **Smart Alerts
+### 📡 Live Object Detection
+- Real-time webcam inference using **YOLOv8 (yolov8n.pt)**
+- Detects **80+ COCO dataset objects**
+- Bounding boxes with confidence scores
+- Smooth frame processing using Streamlit WebRTC
 
-Real-time WebRTC streaming
+### 📊 Object Tracking & Counting
+- Live object counting per class
+- On-screen overlay display
+- Sidebar statistics dashboard
 
-Person, phone, weapons, vehicles, animals
+### 🚨 Smart Alert System
+- Configurable alert targets (person, phone, car, etc.)
+- Timestamped detection logs
+- Last 10 alerts history tracking
 
-Custom threat detection
+### 💾 Frame Saving System
+- Manual frame capture
+- Auto-save mode every few seconds
+- Local evidence storage (`saved_frames/`)
+- Download & delete saved images
 
-Mirror/selfie mode
+### 🎨 Modern UI
+- Cyberpunk-style Streamlit interface
+- Interactive sidebar control panel
+- Real-time metrics dashboard
+- Threat level indicator (Low / Medium / High)
 
-Electronics, furniture, food, sports gear
+### 🔄 Advanced Video Processing
+- Mirror mode (flip view)
+- FPS overlay
+- Optimized inference (every 2 frames)
+- Thread-safe shared state handling
 
-Audio-visual notifications
+---
 
-25 FPS smooth processing
+## 🧠 Tech Stack
 
-Kitchen items, tools, clothing
+- **Python 3.9+**
+- [Streamlit](https://streamlit.io/)
+- [streamlit-webrtc](https://github.com/whitphx/streamlit-webrtc)
+- [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics)
+- OpenCV
+- NumPy
+- PyAV
+- Threading
 
-Recent alert history
+---
 
-📊 **Analytics Dashboard
+## 📦 Installation
 
-💾 **Evidence Capture
-
-🎛️ **Control Panel
-
-Live object counting
-
-Manual & auto-save frames
-
-One-click controls
-
-Threat level meter
-
-Download/delete evidence
-
-Reset & clear
-
-Detection metrics
-
-Timestamped filenames
-
-Customizable settings
-
-🛠️ Tech Stack
-
-Copy code
-🔥 Core: Streamlit + WebRTC + YOLOv8n
-📹 Video: OpenCV + PyAV
-⚡ Real-time: Async processing + Threading
-🎨 UI: Custom Cyberpunk theme
-🚀 Quick Start
-Prerequisites
-bash
-
-Copy code
-Python 3.9+ | pip 23+
-Installation
-bash
-
-Copy code
-# Clone & Install
-git clone https://github.com/yourusername/live-object-detection.git
-cd live-object-detection
-
-# Create virtual environment
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/object-detection-streamlit.git
+cd object-detection-streamlit
+2. Create virtual environment (recommended)
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# venv\Scripts\activate  # Windows
-
-# Install dependencies
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+3. Install dependencies
 pip install -r requirements.txt
-Run the App
-bash
-
-Copy code
+📄 Requirements (requirements.txt)
+streamlit
+streamlit-webrtc
+ultralytics
+opencv-python
+numpy
+av
+▶️ Run the App
 streamlit run app.py
-First run downloads YOLOv8 model (~6MB) - takes 30s
+📷 How It Works
+Click START DETECTION
+Allow webcam access
+The YOLOv8 model processes frames in real time
+Objects are detected, counted, and displayed instantly
+Alerts trigger when selected objects appear
+Frames can be saved manually or automatically
+⚙️ Configuration Options
 
-📱 Usage
-Click "🚀 START DETECTION"
-Hold objects in front of camera (person, phone, bottle, book, etc.)
-Customize alerts for specific threats
-📸 SAVE interesting frames or enable 🤖 Auto-save
-Monitor live metrics & threat levels
-🎯 Detected Objects (80+ classes)
+In the sidebar:
 
-Copy code
-👥 People | 🚗 Vehicles | 🐕 Animals | 📱 Electronics
-🍎 Food | 🏠 Furniture | 🛠️ Tools | 🎾 Sports
-🎨 Cyberpunk UI Screenshots
-Live Detection
+🔄 Mirror Mode ON/OFF
+📊 Object Counting display
+🚨 Alert system toggle
+🎯 Select alert objects
+🤖 Auto-save frames
+📁 Project Structure
+.
+├── app.py
+├── packages.txt
+├── requirements.txt
+└── README.md
+🧪 Example Use Cases
+Security surveillance system
+AI-based monitoring dashboard
+Smart classroom / attendance tracking
+Object detection demo app
+Computer vision learning project
+⚠️ Notes
+First run may take ~20–30 seconds to load YOLO model
+Works best with a stable webcam
+GPU is optional but improves performance
+📸 Preview
 
-Control Panel
+Add screenshots or GIFs here:
 
-Evidence Storage
+/assets/demo.gif
+📜 License
 
-Live Feed
+MIT License — free to use and modify.
 
-Controls
+👨‍💻 Author
 
-Evidence
+Built with ❤️ using YOLOv8 + Streamlit
 
-⚙️ Configuration
-Setting
+⭐ If you like this project
 
-Default
+Give it a star ⭐ on GitHub and share it with others!
 
-Purpose
 
-conf=0.45
+---
 
-Confidence threshold
-
-Detection sensitivity
-
-iou=0.5
-
-Non-max suppression
-
-Reduce duplicate boxes
-
-640x640
-
-Model input size
-
-Balance speed/accuracy
-
-25 FPS
-
-Video framerate
-
-Smooth real-time
-
-🔧 Customization
-Add New Alert Objects
-python
-
-Copy code
-alert_objects = ["knife", "gun", "backpack", "suspicious bag"]
-Custom Colors
-python
-
-Copy code
-OBJECT_COLORS['your_object'] = (R, G, B)  # Add to color dict
-Performance Tuning
-python
-
-Copy code
-# Faster: Lower resolution
-inference_img = cv2.resize(img, (416, 416))  # vs 640x640
-
-# Skip frames for mobile
-if self.frame_count % 3 == 0:  # Every 3rd frame
-📁 File Structure
-
-Copy code
-├── app.py                 
-├── requirements.txt       
-├── packages.txt           
-└── README.md             
-
-📦 requirements.txt
-txt
-
-Copy code
-streamlit==1.28.1
-streamlit-webrtc==0.9.2
-ultralytics==8.0.196
-opencv-python==4.8.1.78
-av==10.0.0
-numpy==1.24.3
-
-🚀 Performance
-Device
-
-FPS
-
-Objects/sec
-
-Latency
-
-M1 Mac
-
-25 FPS
-
-80+
-
-<50ms
-
-iPhone 15
-
-20 FPS
-
-60+
-
-<80ms
-
-Intel i7
-
-22 FPS
-
-75+
-
-<60ms
-
-🔒 Privacy & Security
-✅ Local processing - No cloud upload
-✅ No audio recording
-✅ Manual evidence control
-✅ Delete anytime
-🤝 Contributing
-Fork the repo
-Create feature branch (git checkout -b feature/amazing-feature)
-Commit changes (git commit -m 'Add amazing feature')
-Push & PR!
-📄 License
-MIT License - Free for commercial & personal use!
-
-🙌 Acknowledgments
-Ultralytics YOLOv8
-Streamlit Team
-Streamlit-WebRTC
-⭐ Star this repo if it helps! | 👨‍💻 Built with ❤️ for AI enthusiasts
-
+If you want, I can also:
+- make a **professional GitHub repo structure (with folders + modular code)**
+- add a **Dockerfile for deployment**
+- or convert this into a **portfolio-ready project with badges + demo GIF + architecture diagram**
