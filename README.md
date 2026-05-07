@@ -126,9 +126,3 @@ Built with ❤️ using YOLOv8 + Streamlit
 Give it a star ⭐ on GitHub and share it with others!
 
 
----
-
-If you want, I can also:
-- make a **professional GitHub repo structure (with folders + modular code)**
-- add a **Dockerfile for deployment**
-- or convert this into a **portfolio-ready project with badges + demo GIF + architecture diagram**
