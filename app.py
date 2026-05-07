@@ -315,7 +315,7 @@ h2 {color: #00ccff; font-family: 'Orbitron'; text-shadow: 0 0 15px #00ccff;}
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("# 🎯 **Live Object Detection & Tracking**")
+st.markdown("# 🎯 **Live Object Detection & Tracing**")
 st.markdown("### *Real-time AI Surveillance - 80+ Objects Detected*")
 
 # **ENHANCED SIDEBAR**
